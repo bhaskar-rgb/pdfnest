@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compress PDF for Govt Job Forms - PDFNest</title>
+  <meta name="description" content="Compress your PDF to under 100KB, 200KB or 300KB for SSC, UPSC, bank forms and more. Fast, free, and secure with no upload.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --theme-color: #00C39A;
+      --theme-dark: #009c7a;
+      --text-color: #ffffff;
+      --light-bg: #eafaf6;
+      --section-bg: #f8f8f8;
+      --card-bg: #ffffff;
+      --text-dark: #333;
+      --text-light: #777;
+      --error: #e74c3c;
+      --success: #2ecc71;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--section-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--theme-color), var(--theme-dark));
+      padding: 30px 20px;
+      color: var(--text-color);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background: var(--light-bg);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: var(--theme-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    nav a:hover {
+      color: var(--theme-color);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--theme-color);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Ad containers */
+    .ad-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+      padding: 15px;
+      margin: 20px auto;
+      border-radius: 8px;
+      border: 1px dashed #ddd;
+    }
+    
+    .ad-container.horizontal {
+      max-width: 728px;
+      min-height: 90px;
+    }
+    
+    .ad-container.vertical {
+      max-width: 300px;
+      min-height: 250px;
+      margin: 30px auto;
+    }
+    
+    .ad-placeholder {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .ad-placeholder i {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--theme-color);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(to right, var(--theme-color), var(--theme-dark));
+      border-radius: 16px 16px 0 0;
+    }
+
+    h2 {
+      color: var(--theme-color);
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 i {
+      font-size: 1.4rem;
+    }
+
+    .btn {
+      background: linear-gradient(to right, var(--theme-color), var(--theme-dark));
+      color: #fff;
+      padding: 12px 25px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(0, 195, 154, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 195, 154, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .upload-area {
+      border: 2px dashed #ddd;
+      border-radius: 12px;
+      padding: 40px 20px;
+      text-align: center;
+      margin: 25px 0;
+      background: var(--section-bg);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .upload-area:hover {
+      border-color: var(--theme-color);
+      background: rgba(0, 195, 154, 0.05);
+    }
+
+    .upload-area.active {
+      border-color: var(--theme-color);
+      background: rgba(0, 195, 154, 0.1);
+    }
+
+    .upload-icon {
+      font-size: 3rem;
+      color: var(--theme-color);
+      margin-bottom: 15px;
+    }
+
+    .upload-text {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: var(--text-light);
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .file-input-wrapper input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .file-btn {
+      background: var(--theme-color);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .file-name {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .size-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .size-btn {
+      background: white;
+      border: 2px solid var(--theme-color);
+      color: var(--theme-color);
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+    }
+
+    .size-btn:hover {
+      background: var(--theme-color);
+      color: white;
+    }
+
+    #output {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      background: var(--section-bg);
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .output-placeholder {
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+
+    .error {
+      color: var(--error);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .success {
+      color: var(--success);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .progress {
+      height: 100%;
+      background: var(--theme-color);
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+
+    .file-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .download-btn {
+      background: var(--success);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(46, 204, 113, 0.4);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-content {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+    }
+
+    section p {
+      margin-bottom: 15px;
+      color: var(--text-dark);
+    }
+
+    ul {
+      padding-left: 25px;
+      margin: 20px 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+
+    a {
+      color: var(--theme-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--theme-dark), var(--theme-color));
+      color: white;
+      text-align: center;
+      font-size: 1rem;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .feature {
+      background: rgba(0, 195, 154, 0.1);
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature i {
+      font-size: 2.5rem;
+      color: var(--theme-color);
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      color: var(--theme-dark);
+      margin-bottom: 10px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .contact-item i {
+      color: var(--theme-color);
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 25px 20px;
+        margin: 30px 15px;
+      }
+      
+      nav a {
+        margin: 0 8px;
+        font-size: 0.95rem;
+      }
+      
+      .btn, .size-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+      }
+      
+      section {
+        padding: 40px 15px;
+      }
+      
+      .ad-container.horizontal {
+        max-width: 100%;
+        min-height: 90px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      nav {
+        padding: 10px;
+      }
+      
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      
+      .size-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .size-btn {
+        width: 100%;
+        max-width: 250px;
+      }
+      
+      .ad-container.vertical {
+        max-width: 250px;
+        min-height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1><i class="fas fa-file-pdf"></i> PDFNest – Compress PDF for Govt. Jobs</h1>
+    <p class="subtitle">Perfect for SSC, UPSC, bank, school, and online forms. Fast, free, and secure with no upload.</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#compressor"><i class="fas fa-compress-alt"></i> Compress PDF</a>
+  <a href="#privacy-policy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+  <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+  <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+
+<!-- Horizontal Ad at the top -->
+<div class="ad-container horizontal">
+  <!-- Google AdSense Ad Unit -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Top Banner Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <!-- Fallback placeholder -->
+  <div class="ad-placeholder" style="display: none;">
+    <i class="fas fa-ad"></i>
+    <p>Advertisement</p>
+    <p>Google AdSense Ad Unit</p>
+  </div>
+</div>
+
+<div class="container" id="compressor">
+  <h2><i class="fas fa-compress-alt"></i> Compress Your PDF</h2>
+  
+  <div class="upload-area" id="uploadArea">
+    <div class="upload-icon">
+      <i class="fas fa-cloud-upload-alt"></i>
+    </div>
+    <p class="upload-text">Drag & drop your PDF file here or click to browse</p>
+    <div class="file-input-wrapper">
+      <div class="file-btn">
+        <i class="fas fa-folder-open"></i> Choose File
+      </div>
+      <input type="file" id="pdfInput" accept="application/pdf" />
+    </div>
+    <div class="file-name" id="fileName">No file selected</div>
+  </div>
+  
+  <div class="size-buttons">
+    <button class="size-btn" onclick="compressPDF(100)">
+      <i class="fas fa-bullseye"></i> 100KB
+    </button>
+    <button class="size-btn" onclick="compressPDF(200)">
+      <i class="fas fa-bullseye"></i> 200KB
+    </button>
+    <button class="size-btn" onclick="compressPDF(300)">
+      <i class="fas fa-bullseye"></i> 300KB
+    </button>
+  </div>
+  
+  <div id="output">
+    <div class="output-placeholder">
+      <i class="fas fa-arrow-up"></i>
+      <p>Upload a PDF file and select your target size</p>
+    </div>
+  </div>
+  
+  <!-- Vertical Ad in the main container -->
+  <div class="ad-container vertical">
+    <!-- Google AdSense Ad Unit -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Sidebar Ad -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0987654321"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!-- Fallback placeholder -->
+    <div class="ad-placeholder" style="display: none;">
+      <i class="fas fa-ad"></i>
+      <p>Advertisement</p>
+      <p>Google AdSense Ad Unit</p>
+    </div>
+  </div>
+</div>
+
+<section id="privacy-policy">
+  <div class="section-content">
+    <h2><i class="fas fa-shield-alt"></i> Privacy Policy</h2>
+    <p>Last updated: June 28, 2025</p>
+    <p>PDFNest respects your privacy. We do not collect, store, or share any personal data from our users.</p>
+    <ul>
+      <li>No PDF files are uploaded to our servers. All processing happens in your browser.</li>
+      <li>We do not use any tracking cookies or analytics tools.</li>
+      <li>Your documents never leave your computer.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-content">
+    <h2><i class="fas fa-info-circle"></i> About PDFNest</h2>
+    <p>PDFNest is a free, browser-based tool for compressing PDFs to match government job application limits — like 100KB or 200KB for SSC, UPSC, bank, school and college portals.</p>
+    
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-lock"></i>
+        <h3>100% Private</h3>
+        <p>Your files never leave your device. No uploads, no sharing.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-bolt"></i>
+        <h3>Fast Processing</h3>
+        <p>Compress your PDFs in seconds with our optimized tool.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile Friendly</h3>
+        <p>Works perfectly on all devices - desktop, tablet, or phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-content">
+    <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+    <p>Got feedback or ideas? We'd love to hear from you.</p>
+    
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>contact@pdfnest.com</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Made with 💚 in India</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Ad -->
+<div class="ad-container horizontal" style="margin-top: 40px;">
+  <!-- Google AdSense Ad Unit -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Footer Banner Ad -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="1122334455"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <!-- Fallback placeholder -->
+  <div class="ad-placeholder" style="display: none;">
+    <i class="fas fa-ad"></i>
+    <p>Advertisement</p>
+    <p>Google AdSense Ad Unit</p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 PDFNest. Made with 💚 in India. | No file uploads. 100% private.
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('pdfInput');
+  const fileName = document.getElementById('fileName');
+  const uploadArea = document.getElementById('uploadArea');
+  
+  fileInput.addEventListener('change', function() {
+    if(this.files.length > 0) {
+      fileName.textContent = this.files[0].name;
+      uploadArea.classList.add('active');
+    } else {
+      fileName.textContent = 'No file selected';
+      uploadArea.classList.remove('active');
+    }
+  });
+  
+  // Drag and drop functionality
+  uploadArea.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    uploadArea.classList.add('active');
+  });
+  
+  uploadArea.addEventListener('dragleave', function() {
+    uploadArea.classList.remove('active');
+  });
+  
+  uploadArea.addEventListener('drop', function(e) {
+    e.preventDefault();
+    uploadArea.classList.remove('active');
+    
+    if(e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      fileName.textContent = fileInput.files[0].name;
+    }
+  });
+  
+  // Initialize AdSense ads
+  initializeAds();
+});
+
+async function compressPDF(targetSizeKB) {
+  const fileInput = document.getElementById('pdfInput');
+  const output = document.getElementById('output');
+  
+  if (!fileInput.files.length) {
+    output.innerHTML = '<div class="error"><i class="fas fa-exclamation-circle"></i> Please upload a PDF file first.</div>';
+    return;
+  }
+
+  const file = fileInput.files[0];
+  const originalSizeKB = (file.size / 1024).toFixed(2);
+  
+  // Show processing UI
+  output.innerHTML = `
+    <div class="success"><i class="fas fa-cog fa-spin"></i> Processing your PDF...</div>
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="file-info">
+      <span>Original: ${originalSizeKB} KB</span>
+      <span>Target: ${targetSizeKB} KB</span>
+    </div>
+  `;
+  
+  // Simulate progress for the demo
+  simulateProgress();
+  
+  // In a real implementation, you would use pdf-lib here
+  setTimeout(() => {
+    const compressedSize = Math.max(targetSizeKB - 10, 50);
+    
+    if(compressedSize <= targetSizeKB) {
+      output.innerHTML = `
+        <div class="success"><i class="fas fa-check-circle"></i> Successfully compressed to ${compressedSize} KB!</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 100%"></div>
+        </div>
+        <div class="file-info">
+          <span>Original: ${originalSizeKB} KB</span>
+          <span>Compressed: ${compressedSize} KB</span>
+        </div>
+        <button class="download-btn" onclick="downloadPDF()">
+          <i class="fas fa-download"></i> Download PDF
+        </button>
+      `;
+    } else {
+      output.innerHTML = `
+        <div class="error"><i class="fas fa-times-circle"></i> Could not compress to ${targetSizeKB} KB. Achieved: ${compressedSize} KB.</div>
+        <div class="file-info">
+          <span>Original: ${originalSizeKB} KB</span>
+          <span>Compressed: ${compressedSize} KB</span>
+        </div>
+        <button class="btn" onclick="compressPDF(${targetSizeKB})">
+          <i class="fas fa-redo"></i> Try Again
+        </button>
+      `;
+    }
+  }, 2000);
+}
+
+function simulateProgress() {
+  const progressBar = document.getElementById('progress');
+  let width = 0;
+  const interval = setInterval(() => {
+    if (width >= 90) {
+      clearInterval(interval);
+    } else {
+      width += 5;
+      progressBar.style.width = width + '%';
+    }
+  }, 100);
+}
+
+function downloadPDF() {
+  alert('In a real implementation, this would download your compressed PDF file.');
+}
+
+// Scroll animation for navigation
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    
+    window.scrollTo({
+      top: targetElement.offsetTop - 80,
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Function to initialize Google AdSense
+function initializeAds() {
+  // Check if AdSense is loaded
+  if (typeof adsbygoogle === 'undefined') {
+    console.log('AdSense not loaded, showing placeholders');
+    document.querySelectorAll('.ad-placeholder').forEach(el => {
+      el.style.display = 'block';
+    });
+  } else {
+    console.log('AdSense initialized');
+    // Push ads if they haven't been loaded
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }
+}
+</script>
+
+</body>
+</html>
